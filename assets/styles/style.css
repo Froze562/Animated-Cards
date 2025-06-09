@@ -46,11 +46,6 @@
     transition-delay: .3s; transition: all .3s ease;
 }
 
-.products-card .card[for="c1"] {background-image: url('/assets/images/Red-Nike-Sneakers.avif');}
-.products-card .card[for="c2"] {background-image: url('/assets/images/Formal-Writing.jpg');}
-.products-card .card[for="c3"] {background-image: url('/assets/images/Dark_Candles.jfif');}
-.products-card .card[for="c4"] {background-image: url('/assets/images/1980\'S-Camera.avif');}
-
 .products-card label:not(:last-child) .description p {
     color: #b0b0ba;
     padding-top: 5px;
