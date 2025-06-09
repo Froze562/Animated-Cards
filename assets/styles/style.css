@@ -1,0 +1,246 @@
+/* *{
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+    font-family: "Ubuntu", sans-serif;
+}
+.no-bootstrap * {
+  all: unset; all: initial; display: revert;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.products-card {
+    width: 100%; height: 100vh;
+    display: flex; align-items: center; justify-content: center;
+}
+.products-card .container {
+    display: flex; flex-wrap: nowrap; justify-content: start;
+    height: 400px;
+}
+
+.products-card .card {
+    display: flex; align-items: flex-end;
+    width: 80px;
+    background-size: cover;
+    border-radius: .75rem; border-radius: 2rem;
+    overflow: hidden; cursor: pointer;
+    margin: 0 10px;
+    transition: .6s cubic-bezier(.28,-0.03,0,.99);
+    box-shadow: 0px 10px 30px -5px rgba(0,0,0,0.8);
+}
+.products-card .card > .row {
+    display: flex; flex-wrap: nowrap;
+    color: #fff;
+}
+.products-card .card > .row > .icon {
+    background: #223; color: #fff;
+    border-radius: 50%;
+    width: 50px; margin: 15px;
+    display: flex; justify-content: center; align-items: center;
+}
+.products-card .card > .row > .description {
+    display: flex; flex-direction: column;
+    height: 80px; width: 520px;
+    overflow: hidden;
+    justify-content: center;
+    opacity: 0; transform: translateY(30px);
+    transition-delay: .3s; transition: all .3s ease;
+}
+
+.products-card .card[for="c1"] {background-image: url('/assets/images/Red-Nike-Sneakers.avif');}
+.products-card .card[for="c2"] {background-image: url('/assets/images/Formal-Writing.jpg');}
+.products-card .card[for="c3"] {background-image: url('/assets/images/Dark_Candles.jfif');}
+.products-card .card[for="c4"] {background-image: url('/assets/images/1980\'S-Camera.avif');}
+
+.products-card label:not(:last-child) .description p {
+    color: #b0b0ba;
+    padding-top: 5px;
+}
+.products-card .description h4 {
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.products-card input {display: none;}
+.products-card input:checked + label {width: 600px;}
+.products-card input:checked + label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+} */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.no-bootstrap * {
+  all: unset;
+  all: initial;
+  display: revert;
+  font-family: "Ubuntu", sans-serif;
+}
+
+.products-card {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.products-card .container {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  height: 400px;
+}
+
+.products-card .card {
+  display: flex;
+  align-items: flex-end;
+  width: 80px;
+  background-size: cover;
+  border-radius: 2rem;
+  overflow: hidden;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: 0.6s cubic-bezier(0.28, -0.03, 0, 0.99);
+  box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+}
+
+.products-card .card > .row {
+  display: flex;
+  flex-wrap: nowrap;
+  color: #fff;
+}
+
+.products-card .card > .row > .icon {
+  background: #223;
+  color: #fff;
+  border-radius: 50%;
+  width: 50px;
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.products-card .card > .row > .description {
+  display: flex;
+  flex-direction: column;
+  height: 80px;
+  width: 520px;
+  overflow: hidden;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition-delay: 0.3s;
+  transition: all 0.3s ease;
+}
+
+.products-card .card[for="c1"] {
+  background-image: url("/assets/images/Red-Nike-Sneakers.avif");
+}
+
+.products-card .card[for="c2"] {
+  background-image: url("/assets/images/Formal-Writing.jpg");
+}
+
+.products-card .card[for="c3"] {
+  background-image: url("/assets/images/Dark_Candles.jfif");
+}
+
+.products-card .card[for="c4"] {
+  background-image: url("/assets/images/1980'S-Camera.avif");
+}
+
+.products-card label:not(:last-child) .description p {
+  color: #b0b0ba;
+  padding-top: 5px;
+}
+
+.products-card .description h4 {
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.products-card input {
+  display: none;
+}
+
+.products-card input:checked + label {
+  width: 600px;
+}
+
+.products-card input:checked + label .description {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+/* Tablet view (fix edge clipping) */
+@media (max-width: 768px) {
+  .products-card {
+    width: 100%;
+  }
+  .products-card .card {
+    margin: 5px;
+  }
+  .products-card input:checked + label {
+    width: 485px;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-card {
+    height: auto;
+  }
+
+  .products-card .card {
+    width: 100%;
+    height: 80px;
+    border-radius: 25px;
+    margin: 5px 0;
+    transition: all 0.5s ease;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end; /* ✅ keep content at bottom */
+  }
+  .products-card .container {
+    flex-direction: column;
+    align-items: center;
+    height: max-content;
+  }
+
+  .products-card input:checked + label {
+    width: 100%;
+    height: 350px; /* ✅ Expand downward */
+  }
+  .products-card .card > .row {
+    flex-direction: row;
+    align-items: center;
+    padding: 15px;
+    height: auto;
+    width: 100%;
+  }
+  .products-card .card > .row > .icon {
+    display: none;
+  }
+
+  .products-card .card > .row > .description {
+    width: auto;
+    height: auto;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+    text-align: left;
+  }
+  .products-card .card > .row > .description h4 {
+    margin-bottom: 5px;
+  }
+  .products-card input:checked + label .description {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
+}
